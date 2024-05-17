@@ -12,7 +12,7 @@ This Discord Bot is designed to enhance your Discord server with a variety of us
 | `!joke`        | Sends a random joke from a predefined list.        |
 | `!calculate <expression>`  | Evaluates a mathematical expression.               |
 | `!members`     | Lists all members of the guild.                    |      
-| `!weather`     | Provides current weather information for a predefined location. |            
+| `!weather`     | Provides current weather information for a predefined location. (Uses open-meteo free weather api) |            
 
 ## Examples
 
