@@ -21,7 +21,7 @@ client = discord.Client(intents=intents)
 async def on_ready():
     # Bot is connected to Discord
     print(f"{client.user} has connected to Discord")
-    guild = discord.utils.get(client.guilds, name= GUILD_NAME)
+    guild = discord.utils.get(client.guilds, name=GUILD_NAME)
     print(f"This Channel is owned by {guild.owner}")
     print(f"Connected to '{guild.name}' server id {guild.id}")
     print(f"There are total of {guild.member_count} members")
@@ -33,7 +33,7 @@ async def on_ready():
 async def on_member_join(member):
     # When a new member joins the server
     await member.create_dm()
-    await member.dm_channel.send(f"Hi {member.name}, welcome to my Discord Server!")
+    await member.dm_channel.send(f"Hi {member.name}, welcome to my class Discord Server!")
 
 @client.event
 async def on_message(message):
@@ -44,7 +44,7 @@ async def on_message(message):
         return
     
     # if the message has the word "joke"
-    if "joke" in message.content.lower():
+    if message.content.startswith("joke"):
         response = random.choice(jokes)
         await message.channel.send(response)
 

@@ -82,7 +82,7 @@ async def weather(ctx):
     current_apparent_temperature = current.Variables(2).Value()
     current_weather_code = current.Variables(3).Value()
 
-    current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(current.Time()))
+    current_time = time.strftime("%d-%m-%Y %H:%M:%S", time.localtime(current.Time()))
 
     output = (
         f"Current time: {current_time}\n"
@@ -90,29 +90,38 @@ async def weather(ctx):
         + f"Feels like: {current_apparent_temperature:.1f}°C\n"
         + f"Current Relative Humidity: {current_relative_humidity_2m:.1f}\n"
     )
-    weather_code = {
-        (0): "Clear sky",
-        (1, 2, 3): "Mainly clear, partly cloudy, and overcast",
-        (45, 48): "Fog and depositing rime fog",
-        (51, 53, 55): "Drizzle: Light, moderate, and dense intensity",
-        (56, 57): "Freezing Drizzle: Light and dense intensity",
-        (61, 63, 65): "Rain: Slight, moderate and heavy intensity",
-        (66, 67): "Freezing Rain: Light and heavy intensity",
-        (71, 73, 75): "Snow fall: Slight, moderate, and heavy intensity",
-        (77): "Snow grains",
-        (80, 81, 82): "Rain showers: Slight, moderate, and violent",
-        (85, 86): "Snow showers slight and heavy",
-        (95): "Thunderstorm: Slight or moderate",
-        (96, 99): "Thunderstorm with slight and heavy hail",
+    weather_codes = {
+    0: "Clear sky",
+    1: "Mainly clear",
+    2: "Partly cloudy",
+    3: "Overcast",
+    45: "Fog",
+    48: "Depositing rime fog",
+    51: "Drizzle: Light intensity",
+    53: "Drizzle: Moderate intensity",
+    55: "Drizzle: Dense intensity",
+    56: "Freezing Drizzle: Light intensity",
+    57: "Freezing Drizzle: Dense intensity",
+    61: "Rain: Slight intensity",
+    63: "Rain: Moderate intensity",
+    65: "Rain: Heavy intensity",
+    66: "Freezing Rain: Light intensity",
+    67: "Freezing Rain: Heavy intensity",
+    71: "Snow fall: Slight intensity",
+    73: "Snow fall: Moderate intensity",
+    75: "Snow fall: Heavy intensity",
+    77: "Snow grains",
+    80: "Rain showers: Slight intensity",
+    81: "Rain showers: Moderate intensity",
+    82: "Rain showers: Violent intensity",
+    85: "Snow showers: Slight intensity",
+    86: "Snow showers: Heavy intensity",
+    95: "Thunderstorm: Slight or moderate",
+    96: "Thunderstorm with slight hail",
+    99: "Thunderstorm with heavy hail"
     }
-    for key in weather_code:
-        if  isinstance(key,tuple) and int(current_weather_code) in key:
-            output += f"Weather: {weather_code[key]}"
-            break
-        else:
-            if int(current_weather_code) == key:
-                output += f"Weather: {weather_code[key]}"
-                break
+
+    output += f"Weather: {weather_codes[int(current_weather_code)]}"
     await ctx.send(output)
 
 bot.run(TOKEN)

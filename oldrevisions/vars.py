@@ -1,0 +1,22 @@
+jokes = [
+    "Why don't scientists trust atoms? Because they make up everything!",
+    "I'm reading a book on anti-gravity. It's impossible to put down!",
+    "Parallel lines have so much in common. It's a shame they'll never meet.",
+    "Why did the scarecrow win an award? Because he was outstanding in his field!",
+    "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+    "Why did the bicycle fall over? Because it was two tired!",
+    "What do you call fake spaghetti? An impasta!",
+    "Why don't skeletons fight each other? They don't have the guts.",
+    "I told my computer I needed a break, and now it won't stop sending me vacation ads!",
+    "Why don't we ever tell secrets on a farm? Because the potatoes have eyes and the corn has ears!",
+    "Why don't scientists trust stairs? Because they're always up to something!",
+    "Did you hear about the mathematician who’s afraid of negative numbers? He will stop at nothing to avoid them!",
+    "Why did the tomato turn red? Because it saw the salad dressing!",
+    "Why was the math book sad? Because it had too many problems.",
+    "What did the janitor say when he jumped out of the closet? Supplies!",
+    "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+    "What do you call cheese that isn't yours? Nacho cheese!",
+    "I used to be a baker, but I couldn't make enough dough.",
+    "Why did the coffee file a police report? It got mugged!",
+    "I'm on a whiskey diet. I've lost three days already!"
+]
